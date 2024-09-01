@@ -1,0 +1,36 @@
+{
+  "name": "scandit-cordova-datacapture-barcode",
+  "version": "6.22.0",
+  "description": "Scandit Data Capture SDK for Cordova",
+  "license": "Apache-2.0",
+  "private": false,
+  "main": "dist/index.js",
+  "types": "dist/dts/index.d.ts",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "scripts": {
+    "build": "rollup -c rollup.config.js --bundleConfigAsCjs",
+    "test": "npm run lint",
+    "lint": "eslint ./www/ts",
+    "coverage": "jest ./www/test --coverage --maxWorkers=12",
+    "clear-jest-cache": "jest --clearCache || true",
+    "clean": "npm run clear-jest-cache && rimraf dist coverage",
+    "clean-all": "npm run clean && rimraf node_modules"
+  },
+  "dependencies": {
+    "scandit-cordova-datacapture-core": "6.22.0",
+    "scandit-datacapture-frameworks-core": "6.22.0",
+    "scandit-datacapture-frameworks-barcode": "6.22.0"
+  },
+  "devDependencies": {},
+  "cordova": {
+    "id": "scandit-cordova-datacapture-barcode",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  }
+}
